@@ -15,6 +15,11 @@ function showTasks() {
   toDoListInstance.tasks.forEach((task) => {
     const listItem = document.createElement("li");
     listItem.textContent = task
+
+    taskList.addEventListener('click', () => {
+      taskList.classList.toggle('completed')
+    })
+
     taskList.appendChild(listItem);
   });
 }
@@ -42,6 +47,10 @@ function showGroceries() {
   toDoListInstance.groceries.forEach((grocery) => {
     const listItem = document.createElement("li");
     listItem.textContent = grocery;
+
+    groceryList.addEventListener('click', () => {
+      groceryList.classList.toggle('completed')
+    })
     groceryList.appendChild(listItem);
   });
 }
