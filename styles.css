@@ -18,7 +18,12 @@ body {
   font-family: ITCAvantGardeStd-Bk,Arial,sans-serif;
 }
 
-
+#groceryList,
+#taskList {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
 
 .card-container {
   display: flex;
