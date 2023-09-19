@@ -16,8 +16,12 @@ function showTasks() {
     const listItem = document.createElement("li");
     listItem.textContent = task
 
-    taskList.addEventListener('click', () => {
-      taskList.classList.toggle('completed')
+    listItem.addEventListener('click', () => {
+      listItem.classList.toggle('completed')
+    })
+
+    listItem.addEventListener('dblclick', () => {
+      taskList.removeChild(listItem)
     })
 
     taskList.appendChild(listItem);
@@ -48,8 +52,12 @@ function showGroceries() {
     const listItem = document.createElement("li");
     listItem.textContent = grocery;
 
-    groceryList.addEventListener('click', () => {
-      groceryList.classList.toggle('completed')
+    listItem.addEventListener('click', () => {
+      listItem.classList.toggle('completed')
+    })
+
+    listItem.addEventListener('dblclick', () => {
+      groceryList.removeChild(listItem)
     })
     groceryList.appendChild(listItem);
   });
