@@ -4,8 +4,13 @@ import toDoList from "./toDoList.js";
 const toDoListInstance = new toDoList();
 
 function addTask() {
-  const taskInput = document.getElementById("taskInput").value;
-  toDoListInstance.addTasks(taskInput);
+  const taskInput = document.getElementById("taskInput")
+  const taskName = taskInput.value.trim();
+
+  if(taskName !== '') {
+    toDoListInstance.addTasks(taskName);
+    taskInput.value = ''
+  }
   showTasks();
 }
 
@@ -21,7 +26,8 @@ function showTasks() {
     })
 
     listItem.addEventListener('dblclick', () => {
-      taskList.removeChild(listItem)
+      toDoListInstance.deleteTasks(task)
+      showTasks()
     })
 
     taskList.appendChild(listItem);
@@ -40,8 +46,13 @@ function showTaskDescription() {
 }
 
 function addGrocery() {
-  const groceryInput = document.getElementById("groceryInput").value;
-  toDoListInstance.addGroceries(groceryInput);
+  const groceryInput = document.getElementById("groceryInput")
+  const grocName = groceryInput.value.trim();
+
+  if(grocName !== '') {
+    toDoListInstance.addGroceries(grocName);
+    groceryInput.value = ''
+  }
   showGroceries();
 }
 
@@ -57,7 +68,8 @@ function showGroceries() {
     })
 
     listItem.addEventListener('dblclick', () => {
-      groceryList.removeChild(listItem)
+      toDoListInstance.deleteGroceries(grocery)
+      showGroceries()
     })
     groceryList.appendChild(listItem);
   });
