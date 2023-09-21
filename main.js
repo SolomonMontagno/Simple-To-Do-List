@@ -1,6 +1,5 @@
 import toDoList from "./toDoList.js";
 
-
 const toDoListInstance = new toDoList();
 
 function addTask() {
