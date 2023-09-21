@@ -6,7 +6,6 @@ const toDoListInstance = new toDoList();
 function addTask() {
   const taskInput = document.getElementById("taskInput")
   const taskName = taskInput.value.trim();
-
   if(taskName !== '') {
     toDoListInstance.addTasks(taskName);
     taskInput.value = ''
@@ -50,7 +49,6 @@ function addGrocery() {
   const grocName = groceryInput.value.trim();
 
   if(grocName !== '') {
-    console.log("Adding grocery:", grocName); 
     toDoListInstance.addGroceries(grocName);
     groceryInput.value = "";
   }
