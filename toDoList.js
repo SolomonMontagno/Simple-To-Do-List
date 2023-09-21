@@ -39,14 +39,13 @@ class toDoList {
   }
 
   addGroceries(addGroc) {
-    if (this.addGroceries) {
+    if (addGroc) {
       this.groceries.push(addGroc);
     }
     return this.groceries;
   }
 
   deleteGroceries(groceries) {
-    console.log(this.groceries);
     const index = this.groceries.indexOf(groceries);
     if (index !== -1) {
       this.groceries.splice(index, 1);

@@ -50,8 +50,9 @@ function addGrocery() {
   const grocName = groceryInput.value.trim();
 
   if(grocName !== '') {
+    console.log("Adding grocery:", grocName); 
     toDoListInstance.addGroceries(grocName);
-    groceryInput.value = ''
+    groceryInput.value = "";
   }
   showGroceries();
 }
@@ -90,9 +91,7 @@ function deleteGroc() {
 document.addEventListener("DOMContentLoaded", function () {
   document.getElementById("addDescriptionButton").addEventListener("click", addDescription);
   document.getElementById("addTaskButton").addEventListener("click", addTask);
-  document.getElementById("deleteTaskButton").addEventListener("click", deleteTask);
   document.getElementById("addGroceryButton").addEventListener("click", addGrocery);
-  document.getElementById("deleteGroceryButton").addEventListener("click", deleteGroc);
 
   showTasks();
   showTaskDescription();
