@@ -1,12 +1,10 @@
 import toDoList from "./toDoList.js";
 
-
 const toDoListInstance = new toDoList();
 
 function addTask() {
   const taskInput = document.getElementById("taskInput")
   const taskName = taskInput.value.trim();
-
   if(taskName !== '') {
     toDoListInstance.addTasks(taskName);
     taskInput.value = ''
@@ -51,7 +49,7 @@ function addGrocery() {
 
   if(grocName !== '') {
     toDoListInstance.addGroceries(grocName);
-    groceryInput.value = ''
+    groceryInput.value = "";
   }
   showGroceries();
 }
@@ -90,9 +88,7 @@ function deleteGroc() {
 document.addEventListener("DOMContentLoaded", function () {
   document.getElementById("addDescriptionButton").addEventListener("click", addDescription);
   document.getElementById("addTaskButton").addEventListener("click", addTask);
-  document.getElementById("deleteTaskButton").addEventListener("click", deleteTask);
   document.getElementById("addGroceryButton").addEventListener("click", addGrocery);
-  document.getElementById("deleteGroceryButton").addEventListener("click", deleteGroc);
 
   showTasks();
   showTaskDescription();
